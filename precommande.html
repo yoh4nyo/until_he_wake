@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Précommande — Until He Wakes</title>
+    <meta name="description" content="Précommandez Until He Wakes et débloquez des bonus exclusifs. Choisissez votre édition : Standard, Deluxe ou Collector. Lancement Halloween 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Special+Elite&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #d81c1c;
+            --red-dark: #8e1a0e;
+            --bg: #0a0808;
+            --bg2: #0f0b0b;
+            --bg3: #130e0e;
+            --text: #d4ccc4;
+            --text-muted: #7a706a;
+            --text-dim: #4a4040;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-red: rgba(216, 28, 28, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at top left, #120909 0%, #070607 55%, #050505 100%);
+            color: var(--text);
+            font-family: 'DM Mono', monospace;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 24px 80px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 36px;
+        }
+
+        .logo {
+            font-family: 'Special Elite', cursive;
+            font-size: 22px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .back-link {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+        }
+
+        .eyebrow {
+            color: var(--red);
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            margin-bottom: 10px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 28px;
+            align-items: stretch;
+            margin-bottom: 80px;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Special Elite', cursive;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: clamp(32px, 4vw, 50px);
+            margin-bottom: 10px;
+            max-width: 720px;
+        }
+
+        .hero-sub {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .launch {
+            color: var(--red);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .count-box {
+            width: 78px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 8px;
+            border-radius: 6px;
+        }
+
+        .count-value {
+            color: #fff;
+            font-size: 34px;
+            line-height: 1;
+            font-weight: 500;
+        }
+
+        .count-label {
+            font-size: 9px;
+            color: var(--text-muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 12px 18px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            display: inline-block;
+            min-width: 170px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--red-dark);
+        }
+
+        .btn-secondary {
+            color: var(--text-muted);
+            border-color: var(--border-red);
+            background: rgba(216, 28, 28, 0.06);
+        }
+
+        .side-card {
+            border: 1px solid var(--border-red);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .side-card h3 {
+            font-family: 'Special Elite', cursive;
+            font-weight: 400;
+            font-size: 30px;
+            margin-bottom: 2px;
+        }
+
+        .side-card .price {
+            color: var(--red);
+            font-size: 34px;
+            margin-bottom: 10px;
+            font-family: 'Special Elite', cursive;
+        }
+
+        .list {
+            list-style: none;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .list li::before {
+            content: "- ";
+            color: var(--text-dim);
+        }
+
+        .small {
+            color: var(--text-dim);
+            font-size: 10px;
+            margin-bottom: 12px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: clamp(28px, 3vw, 42px);
+            margin-bottom: 6px;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .editions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .edition-card {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 14px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .edition-card.featured {
+            border-color: var(--border-red);
+            background: rgba(216, 28, 28, 0.08);
+        }
+
+        .edition-card.collector {
+            border-color: rgba(255, 214, 102, 0.35);
+            background: rgba(255, 214, 102, 0.05);
+        }
+
+        .edition-title {
+            font-family: 'Special Elite', cursive;
+            font-size: 30px;
+            margin-bottom: 3px;
+        }
+
+        .edition-price {
+            font-family: 'Special Elite', cursive;
+            font-size: 34px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .edition-card.featured .edition-price {
+            color: var(--red);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .bonus-item {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            padding: 14px;
+            min-height: 95px;
+        }
+
+        .bonus-title {
+            font-family: 'Special Elite', cursive;
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .bonus-desc {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 10px;
+            max-width: 920px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            padding: 12px 14px;
+        }
+
+        .faq-q {
+            font-family: 'Special Elite', cursive;
+            font-size: 26px;
+            margin-bottom: 2px;
+        }
+
+        .faq-a {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .final-cta {
+            padding-top: 18px;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 8px;
+        }
+
+        .final-cta p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .editions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bonus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 24px 14px 56px;
+            }
+
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .count-box {
+                width: 72px;
+            }
+
+            .count-value {
+                font-size: 28px;
+            }
+        }
+
+        /* ─── NOISE OVERLAY ─── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.45;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* ─── SCROLLBAR ─── */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--red-dark); }
+
+        /* ─── EDITION CARD HOVER ─── */
+        .edition-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+        }
+        .edition-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(216, 28, 28, 0.18);
+            border-color: var(--border-red);
+        }
+        .edition-card.collector:hover {
+            box-shadow: 0 20px 48px rgba(255, 214, 102, 0.14);
+            border-color: rgba(255, 214, 102, 0.6);
+        }
+
+        /* ─── COUNTDOWN FLIP ANIMATION ─── */
+        .count-box { overflow: hidden; }
+        @keyframes countFlip {
+            0%   { transform: translateY(0);     opacity: 1; }
+            40%  { transform: translateY(-10px); opacity: 0; }
+            60%  { transform: translateY(10px);  opacity: 0; }
+            100% { transform: translateY(0);     opacity: 1; }
+        }
+        .count-value.flipping { animation: countFlip 0.32s ease; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <a class="logo" href="./index.html">Until He Wakes</a>
+            <a class="back-link" href="./index.html">Retour au site</a>
+        </div>
+
+        <section class="hero">
+            <div>
+                <div class="eyebrow">Précommande ouverte</div>
+                <h1>Réserve ta descente dans l'horreur</h1>
+                <p class="hero-sub">Choisis ton édition, débloque les bonus exclusifs de lancement et sois prêt pour l'ouverture des portes.</p>
+                <div class="launch">Lancement mondial: 31 Octobre 2026</div>
+                <div class="countdown">
+                    <div class="count-box">
+                        <div class="count-value" id="days">27</div>
+                        <div class="count-label">Jours</div>
+                    </div>
+                    <div class="count-box">
+                        <div class="count-value" id="hours">14</div>
+                        <div class="count-label">Heures</div>
+                    </div>
+                    <div class="count-box">
+                        <div class="count-value" id="minutes">09</div>
+                        <div class="count-label">Minutes</div>
+                    </div>
+                    <div class="count-box">
+                        <div class="count-value" id="seconds">00</div>
+                        <div class="count-label">Secondes</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#editions" class="btn btn-primary">Précommander maintenant</a>
+                    <a href="#editions" class="btn btn-secondary">Voir les éditions</a>
+                </div>
+            </div>
+
+            <aside class="side-card">
+                <div class="eyebrow" style="margin-bottom: 6px;">Edition Deluxe</div>
+                <div class="price">79,99 EUR</div>
+                <ul class="list">
+                    <li>Skin exclusif "Nurse of Ash"</li>
+                    <li>Artbook numérique + OST</li>
+                    <li>Accès anticipé 72h</li>
+                </ul>
+                <div class="small">Paiement sécurisé • Steam, PS5, Xbox</div>
+                <a href="#editions" class="btn btn-primary" style="width:100%;">Réserver Deluxe</a>
+            </aside>
+        </section>
+
+        <section id="editions" class="section">
+            <div class="eyebrow">Editions</div>
+            <h2>Choisis ton niveau de terreur</h2>
+            <p class="section-sub">Toutes les éditions incluent le jeu complet + bonus de précommande.</p>
+
+            <div class="editions-grid">
+                <article class="edition-card">
+                    <div>
+                        <div class="edition-title">Standard</div>
+                        <div class="edition-price">59,99 EUR</div>
+                        <ul class="list">
+                            <li>Jeu de base</li>
+                            <li>Bonus cosmétique exclusif</li>
+                            <li>Fond d'écran digital</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Choisir Standard</a>
+                </article>
+
+                <article class="edition-card featured">
+                    <div>
+                        <ul class="list" style="margin-bottom: 8px;">
+                            <li>Tout le contenu Standard</li>
+                            <li>Accès anticipé 72h</li>
+                            <li>Artbook + OST</li>
+                            <li>Mission annexe exclusive</li>
+                        </ul>
+                        <div class="edition-title">Deluxe</div>
+                        <div class="edition-price">79,99 EUR</div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Prendre Deluxe</a>
+                </article>
+
+                <article class="edition-card collector">
+                    <div>
+                        <div class="edition-title">Collector</div>
+                        <div class="edition-price">129,99 EUR</div>
+                        <ul class="list">
+                            <li>Tout le contenu Deluxe</li>
+                            <li>Steelbook numéroté</li>
+                            <li>Figurine 20 cm</li>
+                            <li>Carte de Blackthorn Asylum</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-secondary" style="border-color: rgba(255, 214, 102, 0.5);">Réserver Collector</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="eyebrow">Bonus précommande</div>
+            <h2>Ce que tu reçois en réservant maintenant</h2>
+            <div class="bonus-grid">
+                <div class="bonus-item">
+                    <div class="bonus-title">Skin exclusif</div>
+                    <div class="bonus-desc">Set "Rust Requiem" unique.</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-title">Pack audio</div>
+                    <div class="bonus-desc">Sons rétro et ambiance binaurale.</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-title">Theme profil</div>
+                    <div class="bonus-desc">Bannière et avatar fondateurs.</div>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-title">Accès prioritaire</div>
+                    <div class="bonus-desc">File prioritaire + notif de lancement.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="eyebrow">FAQ précommande</div>
+            <h2>Questions frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">Puis-je annuler ma precommande ?</div>
+                    <div class="faq-a">Oui, annulation possible jusqu'à la veille du lancement.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Le bonus est-il disponible sur toutes les plateformes ?</div>
+                    <div class="faq-a">Oui, Steam, PlayStation 5 et Xbox Series.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Quand serai-je debite ?</div>
+                    <div class="faq-a">Selon la plateforme, au moment de l'achat ou avant la sortie.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="eyebrow">Précommande</div>
+            <h2>Prends ta place avant l'ouverture des portes</h2>
+            <p>Les bonus disparaissent à la sortie.</p>
+            <a href="#editions" class="btn btn-primary">Je précommande maintenant</a>
+        </section>
+    </div>
+
+    <script>
+        const targetDate = new Date('2026-10-31T00:00:00');
+        const daysEl    = document.getElementById('days');
+        const hoursEl   = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function setFlip(el, newVal) {
+            if (el.textContent === newVal) return;
+            el.classList.remove('flipping');
+            void el.offsetWidth;
+            el.classList.add('flipping');
+            el.textContent = newVal;
+            el.addEventListener('animationend', () => el.classList.remove('flipping'), { once: true });
+        }
+
+        function updateCountdown() {
+            const now  = new Date();
+            const diff = targetDate - now;
+            if (diff <= 0) {
+                [daysEl, hoursEl, minutesEl, secondsEl].forEach(el => setFlip(el, '00'));
+                return;
+            }
+            const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours   = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            setFlip(daysEl,    String(days).padStart(2, '0'));
+            setFlip(hoursEl,   String(hours).padStart(2, '0'));
+            setFlip(minutesEl, String(minutes).padStart(2, '0'));
+            setFlip(secondsEl, String(seconds).padStart(2, '0'));
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
