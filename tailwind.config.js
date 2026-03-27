@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        serif: ['Instrument Serif', 'serif']
+        serif: ['Cormorant Garamond', 'serif']
       }
     }
   },
